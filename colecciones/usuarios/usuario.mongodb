@@ -1,0 +1,57 @@
+use("tienda")
+db.createCollection('usuarios', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['username', 'rol', 'direccion', 'correo', 'telefono'],
+            properties: {
+                nombre: { bsonType: 'string'},
+                username: {bsonType: 'string'},
+                rol: {
+                    enum: ['comprador', 'vendedor']
+                },
+                fecha_nacimiento: {bsonType: 'date'},
+                correo: {bsonType: 'string'},
+                telefono: { bsonType: 'string'},
+                direccion: {
+                    bsonType: 'object',
+                    required: ['detalle', 'ciudad', 'departamento'],
+                    additionalProperties: false,
+                    properties: {
+                        detalle: {bsonType: 'string'},
+                        ciudad: {bsonType: 'string'},
+                        departamento: {bsonType: 'string'}
+                    }
+                },
+                documento: {
+                  bsonType: 'object',
+                  required: ['tipo_documento', 'num_documento'],
+                  additionalProperties: false,
+                  properties:{
+                      tipo_documento:{
+                          enum: ['CE', 'CC', 'Pasaporte']
+                      },
+                      num_documento: { bsonType: 'string' }
+                  }
+              },
+              redes: {
+                bsonType: 'array',
+                minItems: 0,
+                items: {
+                    bsonType: 'object',
+                    additionalProperties: false,
+                    required: ['nombre', 'usuario'],
+                    properties: {
+                        nombre: {
+                            enum: ['Instagram', 'Twitter', 'Facebook', 'Tiktok']
+                        },
+                        usuario: {bsonType: 'string'},
+                        enlace: {bsonType: 'string'}
+                    }
+                }
+            }
+            }
+        }
+    }
+})
+

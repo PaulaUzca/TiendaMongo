@@ -1,0 +1,3 @@
+use("tienda")
+
+db.preguntas.find();

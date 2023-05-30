@@ -1,0 +1,31 @@
+use("tienda")
+
+db.usuarios.insertOne({
+  nombre: "John Doe",
+  username: "johndoe",
+  rol: "comprador",
+  fecha_nacimiento: new Date("1990-01-01"),
+  correo: "johndoe@example.com",
+  telefono: "1234567890",
+  documento: {
+    tipo_documento: "CC",
+    num_documento: "123456789"
+  },
+  direccion: {
+    detalle: "123 Street",
+    ciudad: "City",
+    departamento: "State"
+  },
+  redes: [
+    {
+      nombre: "Instagram",
+      usuario: "johndoe",
+      enlace: "https://instagram.com/johndoe"
+    },
+    {
+      nombre: "Twitter",
+      usuario: "johndoe",
+      enlace: "https://twitter.com/johndoe"
+    }
+  ]
+})

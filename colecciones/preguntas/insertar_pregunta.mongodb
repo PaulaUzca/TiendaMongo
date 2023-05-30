@@ -1,0 +1,25 @@
+use("tienda");
+db.preguntas.insertOne({
+    id_producto: ObjectId("64751a186e4b927f320765c2"),
+    id_usuario_pregunta: ObjectId("64751a186e4b158f320765c2"),
+    username_pregunta: "johndoe",
+    fecha: new Date("2023-05-29T12:00:00Z"),
+    comentario: "¿Cuál es el material de fabricación?",
+    anonimo: true,
+    respuestas: [
+      {
+        id_usuario_respuesta: ObjectId("647538b49612b7b026c4909f"),
+        username_respuesta: "mariagomez",
+        fecha: new Date("2023-05-29T13:00:00Z"),
+        comentario: "El material de fabricación es acero inoxidable.",
+        anonimo: false
+      },
+      {
+        id_usuario_respuesta: ObjectId("64751a186e4b158f320765c2"),
+        username_respuesta: "anonymous_user",
+        fecha: new Date("2023-05-29T14:00:00Z"),
+        comentario: "Tienes más imagenes del producto?.",
+        anonimo: true
+      }
+    ]
+  });

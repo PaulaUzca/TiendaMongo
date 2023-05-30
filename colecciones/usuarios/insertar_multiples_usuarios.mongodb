@@ -1,0 +1,86 @@
+use("tienda");
+
+db.usuarios.insertMany([
+  {
+    nombre: "Juan Pérez",
+    username: "juanperez",
+    rol: "comprador",
+    fecha_nacimiento: new Date("1990-01-01"),
+    correo: "juan@example.com",
+    telefono: "123456789",
+    direccion: {
+      detalle: "Calle Principal 123",
+      ciudad: "Ciudad de México",
+      departamento: "Distrito Federal"
+    },
+    documento: {
+      tipo_documento: "CC",
+      num_documento: "1234567890"
+    },
+    redes: [
+      {
+        nombre: "Instagram",
+        usuario: "juanperez_instagram",
+        enlace: "https://www.instagram.com/juanperez_instagram"
+      },
+      {
+        nombre: "Twitter",
+        usuario: "juanperez_twitter",
+        enlace: "https://twitter.com/juanperez_twitter"
+      }
+    ]
+  },
+  {
+    nombre: "María Gómez",
+    username: "mariagomez",
+    rol: "vendedor",
+    fecha_nacimiento: new Date("1985-05-10"),
+    correo: "maria@example.com",
+    telefono: "987654321",
+    direccion: {
+      detalle: "Avenida Principal 456",
+      ciudad: "Bogotá",
+      departamento: "Cundinamarca"
+    },
+    documento: {
+      tipo_documento: "CE",
+      num_documento: "0987654321"
+    },
+    redes: [
+      {
+        nombre: "Facebook",
+        usuario: "mariagomez_facebook",
+        enlace: "https://www.facebook.com/mariagomez_facebook"
+      }
+    ]
+  },
+  {
+    nombre: "John Smith",
+    username: "johnsmith",
+    rol: "comprador",
+    fecha_nacimiento: new Date("1995-12-15"),
+    correo: "john@example.com",
+    telefono: "555555555",
+    direccion: {
+      detalle: "Street Main 789",
+      ciudad: "New York",
+      departamento: "New York"
+    },
+    documento: {
+      tipo_documento: "Pasaporte",
+      num_documento: "ABC123456"
+    },
+    redes: [
+      {
+        nombre: "Twitter",
+        usuario: "johnsmith_twitter",
+        enlace: "https://twitter.com/johnsmith_twitter"
+      },
+      {
+        nombre: "Tiktok",
+        usuario: "johnsmith_tiktok",
+        enlace: "https://www.tiktok.com/@johnsmith_tiktok"
+      }
+    ]
+  }
+]);

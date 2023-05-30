@@ -1,0 +1,31 @@
+use("tienda")
+db.createCollection('preguntas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['id_producto', 'id_usuario_pregunta', 'username_pregunta', 'fecha', 'comentario', 'anonimo'],
+            properties: {
+                id_producto: {bsonType: 'objectId'},
+                username_pregunta: {bsonType: 'string'},
+                fecha: {bsonType: 'date'},
+                comentario: {bsonType: 'string'},
+                anonimo: {bsonType: 'bool'},
+                respuestas: {
+                    bsonType: 'array',
+                    minItems: 0,
+                    items: {
+                        bsonType: 'object',
+                        required: ['id_usuario_respuesta','username_respuesta', 'fecha', 'comentario', 'anonimo' ],
+                        properties: {
+                            id_usuario_respuesta: {bsonType: 'objectId'},
+                            usuario_respuesta: {bsonType: 'string'},
+                            fecha: {bsonType: 'date'},
+                            comentario: {bsonType: 'string'},
+                            anonimo: {bsonType: 'bool'}
+                        },
+                    }
+                }
+            }
+        }
+    }
+})
