@@ -1,3 +1,5 @@
+// correr usando node js. 
+// node ubicacion/generate_test_data_usuario y se guarda el archivo de una
 const fs = require('fs');
 
 function pickRandomRol() {
