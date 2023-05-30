@@ -1,3 +1,7 @@
 use("tienda")
 
 db.preguntas.find();
+
+// consultar el listado de preguntas y respuestas de un producto en particular
+use("tienda")
+db.preguntas.find( {id_producto: ObjectId("ece66032393bb53404dc5a4b")}, {username_pregunta: 1, comentario:1, "respuestas.username_respuesta": 1, "respuestas.comentario":1})

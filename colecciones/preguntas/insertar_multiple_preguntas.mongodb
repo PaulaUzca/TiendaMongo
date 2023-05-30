@@ -1,0 +1,31 @@
+use("tienda")
+
+db.preguntas.insertMany([
+    {
+      id_producto: ObjectId(), // Replace with an actual ObjectId value
+      id_usuario_pregunta: ObjectId(), // Replace with an actual ObjectId value
+      username_pregunta: 'JohnDoe',
+      fecha: new Date(),
+      comentario: 'What is the price of this product?',
+      anonimo: false,
+      respuestas: []
+    },
+    {
+      id_producto: ObjectId(), // Replace with an actual ObjectId value
+      id_usuario_pregunta: ObjectId(), // Replace with an actual ObjectId value
+      username_pregunta: 'JaneSmith',
+      fecha: new Date(),
+      comentario: 'How long is the warranty?',
+      anonimo: true,
+      respuestas: []
+    },
+    {
+      id_producto: ObjectId(), // Replace with an actual ObjectId value
+      id_usuario_pregunta: ObjectId(), // Replace with an actual ObjectId value
+      username_pregunta: 'BobJohnson',
+      fecha: new Date(),
+      comentario: 'Is this available in different colors?',
+      anonimo: false,
+      respuestas: []
+    }
+  ]);
