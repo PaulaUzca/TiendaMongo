@@ -1,0 +1,38 @@
+use("tienda")
+db.productos.insertOne({
+  id_vendedor: ObjectId("60b8d7b6e6a1d23456789012"),
+  username_vendedor: "vendedor123",
+  nombre: "iPhone 13 Pro",
+  descripcion: "Teléfono inteligente de última generación",
+  imagen: "https://ejemplo.com/iphone.jpg",
+  dimensiones: {
+    altura: 146.7,
+    ancho: 71.5,
+    profundidad: 7.7
+  },
+  categoria: "tecnología",
+  precio: 1099.99,
+  fecha_publicacion: ISODate("2022-09-15T09:30:00Z"),
+  fecha_actualizacion: ISODate("2022-09-20T15:45:00Z"),
+  stock: 50,
+  disponible: true,
+  video: "https://ejemplo.com/iphone-video.mp4",
+  valoraciones: [
+    {
+      id_usuario: ObjectId("60b8d7b6e6a1d23456789034"),
+      username: "usuario123",
+      anonimo: false,
+      valoracion: 4.8,
+      comentario: "¡Excelente teléfono!",
+      fecha: ISODate("2022-09-18T12:00:00Z")
+    },
+    {
+      id_usuario: ObjectId("60b8d7b6e6a1d23456789056"),
+      username: "usuario456",
+      anonimo: true,
+      valoracion: 4.2,
+      comentario: "Buen producto, entrega rápida",
+      fecha: ISODate("2022-09-19T10:15:00Z")
+    }
+  ]
+});

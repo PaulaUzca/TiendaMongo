@@ -4,6 +4,7 @@ db.createCollection('productos', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
+            required: ['id_vendedor', 'username_vendedor','nombre', 'categoria', 'precio', 'fecha_publicacion', 'stock', 'disponible'],
             properties: {
                 id_vendedor: { bsonType: 'objectId' },
                 username_vendedor: {bsonType: 'string'},
@@ -14,7 +15,7 @@ db.createCollection('productos', {
                 categoria: {
                         enum: ['tecnología', 'cosmeticos', 'ropa dama', 'ropa caballero']
                     },
-                precio: { bsonType: 'int' },
+                precio: { bsonType: 'double' },
                 fecha_publicacion: { bsonType: 'date' },
                 fecha_actualizacion: { bsonType: 'date' },
                 stock: { bsonType: 'int' },
@@ -31,7 +32,9 @@ db.createCollection('productos', {
                             username: {bsonType: 'string'},
                             anonimo: { bsonType: 'bool'},
                             valoracion: { 
-                                bsonType: 'int',
+                                bsonType: 'double',
+                                maximum: 5,
+                                minimum: 0,
                             },
                             comentario: { bsonType: 'string' },
                             fecha: { bsonType: 'date'}

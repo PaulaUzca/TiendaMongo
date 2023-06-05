@@ -1,0 +1,108 @@
+use("tienda")
+
+db.productos.insertMany([
+  {
+    id_vendedor: ObjectId("60b8d7b6e6a1d23456789023"),
+    username_vendedor: "vendedor456",
+    nombre: "Laptop HP",
+    descripcion: "Potente laptop para tareas de trabajo",
+    imagen: "https://ejemplo.com/laptop-hp.jpg",
+    dimensiones: {
+      altura: 19.9,
+      ancho: 35.8,
+      profundidad: 2.3
+    },
+    categoria: "tecnología",
+    precio: 999.99,
+    fecha_publicacion: ISODate("2022-08-01T10:00:00Z"),
+    fecha_actualizacion: ISODate("2022-08-03T14:30:00Z"),
+    stock: 20,
+    disponible: true,
+    video: "https://ejemplo.com/laptop-hp-video.mp4",
+    valoraciones: [
+      {
+        id_usuario: ObjectId("60b8d7b6e6a1d23456789067"),
+        username: "usuario789",
+        anonimo: false,
+        valoracion: 4.6,
+        comentario: "Buena laptop para el trabajo diario",
+        fecha: ISODate("2022-08-02T11:45:00Z")
+      }
+    ]
+  },
+  {
+    id_vendedor: ObjectId("60b8d7b6e6a1d23456789089"),
+    username_vendedor: "vendedorabc",
+    nombre: "Perfume Masculino",
+    descripcion: "Fragancia intensa para hombres",
+    imagen: "https://ejemplo.com/perfume-masculino.jpg",
+    dimensiones: {
+      altura: 12,
+      ancho: 6,
+      profundidad: 4
+    },
+    categoria: "cosmeticos",
+    precio: 79.99,
+    fecha_publicacion: ISODate("2022-08-02T08:30:00Z"),
+    fecha_actualizacion: ISODate("2022-08-04T12:15:00Z"),
+    stock: 50,
+    disponible: true,
+    video: "https://ejemplo.com/perfume-masculino-video.mp4",
+    valoraciones: [
+      {
+        id_usuario: ObjectId("60b8d7b6e6a1d234567890cd"),
+        username: "usuariodef",
+        anonimo: true,
+        valoracion: 4.2,
+        comentario: "Fragancia duradera y agradable",
+        fecha: ISODate("2022-08-03T09:00:00Z")
+      },
+      {
+        id_usuario: ObjectId("60b8d7b6e6a1d234567890ef"),
+        username: "usuariohij",
+        anonimo: false,
+        valoracion: 4.8,
+        comentario: "Mi perfume favorito, lo recomiendo",
+        fecha: ISODate("2022-08-03T16:30:00Z")
+      }
+    ]
+  },
+  {
+    id_vendedor: ObjectId("60b8d7b6e6a1d23456789101"),
+    username_vendedor: "vendedorklm",
+    nombre: "Camiseta Deportiva",
+    descripcion: "Camiseta cómoda y transpirable para deportes",
+    imagen: "https://ejemplo.com/camiseta-deportiva.jpg",
+    dimensiones: {
+      altura: 25,
+      ancho: 18,
+      profundidad: 1
+    },
+    categoria: "ropa caballero",
+    precio: 39.99,
+    fecha_publicacion: ISODate("2022-08-03T12:00:00Z"),
+    fecha_actualizacion: ISODate("2022-08-05T09:45:00Z"),
+    stock: 30,
+    disponible: true,
+    video: "https://ejemplo.com/camiseta-deportiva-video.mp4",
+    valoraciones: [
+      {
+        id_usuario: ObjectId("60b8d7b6e6a1d23456789123"),
+        username: "usuario456",
+        anonimo: false,
+        valoracion: 4.4,
+        comentario: "Cómoda y excelente calidad",
+        fecha: ISODate("2022-08-04T10:30:00Z")
+      },
+      {
+        id_usuario: ObjectId("60b8d7b6e6a1d23456789145"),
+        username: "usuario789",
+        anonimo: false,
+        valoracion: 4.7,
+        comentario: "Me encanta la camiseta, la uso para hacer ejercicio",
+        fecha: ISODate("2022-08-04T13:15:00Z")
+      }
+    ]
+  }
+]);
+
