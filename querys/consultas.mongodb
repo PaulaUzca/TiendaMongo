@@ -13,16 +13,13 @@ determinado.*/
 /*e.Consultar el listado de calificaciones de un producto ordenado ordenando de forma que las
 mejores calificaciones se muestran primero y las peores al final. */
 
-/*
-f. Consultar los datos completos de un vendedor.
-*/
+/*f. Consultar los datos completos de un vendedor.*/
 use("tienda")
 // consultar el listado completo de vendedores
 db.usuarios.find({nombre:"Usuario 9"})
 
 /*g. Consultar el listado completo de vendedores con su nombre y ubicación ordenado
-alfabéticamente.
-*/
+alfabéticamente.*/
 use("tienda")
 db.usuarios.find({'rol': 'vendedor'}, {'nombre': 1, 'direccion':1}).sort({'nombre': 1, 'direccion.detalle': 1});
 

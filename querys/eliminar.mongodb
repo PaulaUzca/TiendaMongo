@@ -1,6 +1,9 @@
 // querys de eliminación
 
 /* a) Eliminar todos los productos de un vendedor.*/
+use("tienda")
+db.productos.find({username_vendedor: "vendedor4"}).count()
+db.productos.deleteMany({username_vendedor:"vendedor4"})
 
 /* b) Eliminar todos los vendedores de una ubicación específica, por municipio,
 departamento o las dos.*/
@@ -23,3 +26,6 @@ db.usuarios.deleteMany({
 })
 
 /* c) Eliminar todos los productos con calificaciones de 1 estrella.*/
+use("tienda")
+db.productos.find({"valoraciones" :{$elemMatch: {"valoracion":1}}}).count()
+db.productos.deleteMany({"valoraciones": {$elemMatch: {"valoracion":1}}})

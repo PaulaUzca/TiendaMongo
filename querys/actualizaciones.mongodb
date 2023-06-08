@@ -1,9 +1,49 @@
 // Querys de actualizaciones
 
 /*a) Actualizar el precio de un producto y por lo tanto su fecha de actualización.*/
+use("tienda")
+db.productos.find({_id: ObjectId( "648253da6c82873f67b407f2")})
 
+db.productos.updateOne(
+    {_id: ObjectId( "648253da6c82873f67b407f2")},
+    {
+        $set: {
+            precio: 900,
+            fecha_actualizacion: new Date()
+        }
+    })
 /*b) Actualizar todos los stock de productos de un vendedor para llevarlos a 0 y
 marcarlos como no disponibles.*/
+use("tienda")
+db.productos.find({username_vendedor: "mariagomez"})
+
+db.productos.updateMany(
+    {username_vendedor: "mariagomez"},
+    {
+        $set: {
+            stock: 0,
+            fecha_actualizacion: new Date(),
+            disponible: false,
+
+        }
+    }
+)
 
 /*c) Actualizar un producto para borrar todas las calificaciones menores a 2
 estrellas. */
+use("tienda")
+db.productos.find({"valoraciones": {$elemMatch: {"valoracion" : {$lt: 2}} }},
+{"valoraciones.valoracion":1})
+
+db.productos.updateMany(
+    {},
+    {
+        $pull: {
+            valoraciones: {
+                valoracion: { $lt: 2}
+            }
+        },
+    },
+    false,
+    true
+)
