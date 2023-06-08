@@ -1,4 +1,5 @@
 use("tienda")
+db.preguntas.drop();
 db.createCollection('preguntas', {
     validator: {
         $jsonSchema: {

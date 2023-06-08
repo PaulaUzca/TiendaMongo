@@ -1,0 +1,33 @@
+// consultas:
+/*a. Consultar el listado de productos mostrando nombre, precio y descripción ordenado por
+fecha del más reciente al más viejo.*/
+
+/*b.Agrupar los productos por categorías, mostrar el listado de categorías y la cuenta de
+productos por categoría.*/
+
+/*c. Consultar el listado de productos que se encuentren en un rango de valores.*/
+
+/*d. Consultar productos que tengan en sus dimensiones un alto menor a un valor
+determinado.*/
+
+/*e.Consultar el listado de calificaciones de un producto ordenado ordenando de forma que las
+mejores calificaciones se muestran primero y las peores al final. */
+
+/*
+f. Consultar los datos completos de un vendedor.
+*/
+use("tienda")
+// consultar el listado completo de vendedores
+db.usuarios.find({nombre:"Usuario 9"})
+
+/*g. Consultar el listado completo de vendedores con su nombre y ubicación ordenado
+alfabéticamente.
+*/
+use("tienda")
+db.usuarios.find({'rol': 'vendedor'}, {'nombre': 1, 'direccion':1}).sort({'nombre': 1, 'direccion.detalle': 1});
+
+
+/*h. consultar el listado de preguntas y respuestas de un producto en particular*/
+use("tienda")
+db.preguntas.find( {id_producto: ObjectId("ea32c02258fcb2c6d1cfe1a4")}, {username_pregunta: 1, comentario:1, "respuestas.username_respuesta": 1, "respuestas.comentario":1})
+

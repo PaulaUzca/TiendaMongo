@@ -54,7 +54,7 @@ function generateValoracionesRandom(i, compradores){
         id_usuario: {$oid: getRandomItem(compradores)},
         username: `usuario${x+1}`,
         fecha: {$date: getRandomDate()},
-        valoracion: pickRandomNumber(5,1, false),
+        valoracion: pickRandomNumber(5,1, true),
         comentario: `comentario de valoracion${x}`,
         anonimo: pickBool(),
       });
@@ -108,7 +108,7 @@ for (let i = 1; i <= 20; i++) {
       ancho: pickRandomNumber(100, 0,false)
     },
     categoria: getRandomItem(categorias),
-    precio: pickRandomNumber(1000, 0, false),
+    precio: pickRandomNumber(1000, 0, true),
     fecha_publicacion: {$date: getRandomDate()},
     fecha_actualizacion: {$date: getRandomDate()},
     stock: pickRandomNumber(200,0, false),

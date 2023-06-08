@@ -2,8 +2,8 @@ use("tienda")
 
 db.productos.insertMany([
   {
-    id_vendedor: ObjectId("60b8d7b6e6a1d23456789023"),
-    username_vendedor: "vendedor456",
+    id_vendedor: ObjectId("648246d56c82873f67b4076f"),
+    username_vendedor: "usuario9",
     nombre: "Laptop HP",
     descripcion: "Potente laptop para tareas de trabajo",
     imagen: "https://ejemplo.com/laptop-hp.jpg",
@@ -21,18 +21,18 @@ db.productos.insertMany([
     video: "https://ejemplo.com/laptop-hp-video.mp4",
     valoraciones: [
       {
-        id_usuario: ObjectId("60b8d7b6e6a1d23456789067"),
-        username: "usuario789",
+        id_usuario: ObjectId("648246b8f84728121367250c"),
+        username: "johnsmith",
         anonimo: false,
-        valoracion: 4.6,
+        valoracion: 4,
         comentario: "Buena laptop para el trabajo diario",
         fecha: ISODate("2022-08-02T11:45:00Z")
       }
     ]
   },
   {
-    id_vendedor: ObjectId("60b8d7b6e6a1d23456789089"),
-    username_vendedor: "vendedorabc",
+    id_vendedor: ObjectId("648246d56c82873f67b40770"),
+    username_vendedor: "usuario10",
     nombre: "Perfume Masculino",
     descripcion: "Fragancia intensa para hombres",
     imagen: "https://ejemplo.com/perfume-masculino.jpg",
@@ -50,26 +50,26 @@ db.productos.insertMany([
     video: "https://ejemplo.com/perfume-masculino-video.mp4",
     valoraciones: [
       {
-        id_usuario: ObjectId("60b8d7b6e6a1d234567890cd"),
-        username: "usuariodef",
+        id_usuario: ObjectId("648246d56c82873f67b40767"),
+        username: "usuario1",
         anonimo: true,
-        valoracion: 4.2,
+        valoracion: 5,
         comentario: "Fragancia duradera y agradable",
         fecha: ISODate("2022-08-03T09:00:00Z")
       },
       {
-        id_usuario: ObjectId("60b8d7b6e6a1d234567890ef"),
-        username: "usuariohij",
+        id_usuario: ObjectId("648246d56c82873f67b40768"),
+        username: "usuario2",
         anonimo: false,
-        valoracion: 4.8,
+        valoracion: 5,
         comentario: "Mi perfume favorito, lo recomiendo",
         fecha: ISODate("2022-08-03T16:30:00Z")
       }
     ]
   },
   {
-    id_vendedor: ObjectId("60b8d7b6e6a1d23456789101"),
-    username_vendedor: "vendedorklm",
+    id_vendedor: ObjectId("648246d56c82873f67b40773"),
+    username_vendedor: "usuario13",
     nombre: "Camiseta Deportiva",
     descripcion: "Camiseta cómoda y transpirable para deportes",
     imagen: "https://ejemplo.com/camiseta-deportiva.jpg",
@@ -87,18 +87,18 @@ db.productos.insertMany([
     video: "https://ejemplo.com/camiseta-deportiva-video.mp4",
     valoraciones: [
       {
-        id_usuario: ObjectId("60b8d7b6e6a1d23456789123"),
-        username: "usuario456",
+        id_usuario: ObjectId("648246d56c82873f67b4076a"),
+        username: "usuario4",
         anonimo: false,
-        valoracion: 4.4,
+        valoracion: 3,
         comentario: "Cómoda y excelente calidad",
         fecha: ISODate("2022-08-04T10:30:00Z")
       },
       {
-        id_usuario: ObjectId("60b8d7b6e6a1d23456789145"),
-        username: "usuario789",
+        id_usuario: ObjectId("648246d56c82873f67b4076b"),
+        username: "usuario5",
         anonimo: false,
-        valoracion: 4.7,
+        valoracion: 4.5,
         comentario: "Me encanta la camiseta, la uso para hacer ejercicio",
         fecha: ISODate("2022-08-04T13:15:00Z")
       }

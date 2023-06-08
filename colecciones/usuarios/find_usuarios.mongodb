@@ -1,31 +1,4 @@
 use("tienda")
 
-// consultar el listado completo de vendedores
-db.usuarios.find({'rol': 'vendedor'}, {'nombre': 1, 'direccion':1}).sort({'nombre': 1, 'direccion.detalle': 1});
+db.usuarios.find({"rol":"vendedor"})
 
-
-// consultar los datos completos de un vendedor
-db.usuarios.find({_id: ObjectId("64754db164e0b5d403b635c7")})
-
-
-// eliminar todos los vendedores por una ubicacion especifica
-// por departamento
-db.usuarios.deleteMany({
-    "rol": "vendedor",
-    "direccion.departamento": "Cundinamarca"
-})
-
-db.usuarios.find({"direccion.departamento": "Cundinamarca"})
-
-// por departamento y ciudad
-db.usuarios.deleteMany({
-    "rol": "vendedor",
-    "direccion.departamento": "Departamento 2",
-    "direccion.ciudad": "Ciudad 0"
-})
-
-db.usuarios.find({
-    "rol": "vendedor",
-    "direccion.departamento": "Departamento 2",
-    "direccion.ciudad": "Ciudad 0"
-})

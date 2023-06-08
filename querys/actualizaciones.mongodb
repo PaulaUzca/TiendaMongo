@@ -1,0 +1,9 @@
+// Querys de actualizaciones
+
+/*a) Actualizar el precio de un producto y por lo tanto su fecha de actualización.*/
+
+/*b) Actualizar todos los stock de productos de un vendedor para llevarlos a 0 y
+marcarlos como no disponibles.*/
+
+/*c) Actualizar un producto para borrar todas las calificaciones menores a 2
+estrellas. */
