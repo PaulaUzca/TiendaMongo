@@ -1,21 +1,47 @@
 // consultas:
 /*a. Consultar el listado de productos mostrando nombre, precio y descripción ordenado por
 fecha del más reciente al más viejo.*/
+use("tienda")
+db.productos.find({},{'nombre':1, 'precio':1, 'descripcion':1, 'fecha_publicacion':1}).sort({'fecha_publicacion':-1})
 
 /*b.Agrupar los productos por categorías, mostrar el listado de categorías y la cuenta de
 productos por categoría.*/
+use("tienda")
+db.productos.aggregate(
+    [
+        {
+            $group: {_id: "$categoria",
+            count: { $sum: 1 }}
+        },
+        {$project: {_id: 0, categoria: "$_id", count: 1}}
+    ])
 
 /*c. Consultar el listado de productos que se encuentren en un rango de valores.*/
+use("tienda")
+db.productos.find({'precio': {$gte: 50.00 , $lte: 800.00}},{'precio':1,'nombre':1})
 
 /*d. Consultar productos que tengan en sus dimensiones un alto menor a un valor
 determinado.*/
+use("tienda")
+db.productos.find({'dimensiones.altura': {$lt: 30}},{'dimensiones':1, 'nombre':1})
 
 /*e.Consultar el listado de calificaciones de un producto ordenado ordenando de forma que las
 mejores calificaciones se muestran primero y las peores al final. */
+use("tienda")
+db.productos.aggregate(
+    { $match: {_id: ObjectId("648253da6c82873f67b407fb") }},
+    { $project: {
+        nombre:1,
+        valoracionesOrdenadas: {
+        $sortArray: {
+            input: "$valoraciones",
+            sortBy: {valoracion:-1}
+        }
+    }}
+    })
 
 /*f. Consultar los datos completos de un vendedor.*/
 use("tienda")
-// consultar el listado completo de vendedores
 db.usuarios.find({nombre:"Usuario 9"})
 
 /*g. Consultar el listado completo de vendedores con su nombre y ubicación ordenado
